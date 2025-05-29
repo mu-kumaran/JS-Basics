@@ -1,0 +1,81 @@
+Setting up local server
+-----------------------
+Using node.js http-server module
+--------------------------------
+Step-1 : Install http-server
+(Make sure you have Node.js installed. Then, install http-server globally via npm)
+npm install -g http-server
+
+Step-2: Navigate to Your Project Directory
+(Go to the folder where your static site files (like index.html) are located:)
+cd path/to/your/project
+
+Step-3: Start the Server
+http-server     (or http-server ./ -p 3000 -o -c-1)
+
+This will start a server, and you'll see output like:
+Starting up http-server, serving ./
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.1.x:8080
+Your files are now accessible via http://localhost:8080
+
+ Optional Flags
+Here are some useful flags:
+
+    Flag	    Description
+-p or --port	Specify a port (default is 8080). Example: http-server -p 3000
+-a or --host	Specify a host (default is 0.0.0.0). Example: http-server -a 127.0.0.1
+-o	            Open browser automatically. Example: http-server -o
+-c	            Set cache time (in seconds or use -1 for no cache). Example: -c-1
+-s	            Serve index.html for all 404s (useful for SPAs). Example: http-server -s
+
+Example:
+--------
+http-server ./public -p 3000 -o -c-1
+
+This will:
+
+Serve files from the ./public folder
+
+Use port 3000
+
+Open your default browser
+
+Disable caching
+--------------------------------------------------------------------------------------------------
+Note:
+-----
+Disabling caching with -c-1 in http-server is often done during development, and here’s why:
+
+🧠 Reason: To See Changes Immediately
+When a browser caches files (like HTML, CSS, JS), it may serve old versions from the cache, even after you've made changes. That can lead to:
+
+Confusing bugs (you’re editing a file but see no changes)
+
+Wasted time doing hard refreshes or clearing cache manually
+
+Outdated content being tested or reviewed
+
+✅ When to Use -c-1 (No Cache)
+Development mode
+
+You're frequently editing static files (HTML, CSS, JS)
+
+You want the browser to always fetch the latest version from the server
+
+❌ When Not to Use It
+In production, where caching improves performance and reduces server load
+
+When serving large files or media that rarely change
+
+🔍 What Does -c-1 Do Exactly?
+The -c flag controls the Cache-Control HTTP header. Using -c-1 sets it to:
+
+yaml
+Copy
+Edit
+Cache-Control: no-cache, no-store, must-revalidate
+This tells the browser:
+
+“Do not store this file at all — always re-fetch it from the server.”
