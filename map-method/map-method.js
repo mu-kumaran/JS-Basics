@@ -20,3 +20,8 @@ const users = [
 const names = users.map(value => value.name)
 const ages = users.map(value => value.age)
 console.log(names,ages)
+
+// Example - 4 : Making file paths
+const filename = ["file1.txt","file2.txt"]
+const paths = filename.map(value => "./filepath/"+value)
+console.log(paths)
