@@ -1,0 +1,19 @@
+map() method:
+-------------
+- The map() method in JavaScript is used to transform each element of an array and return a new array with the results.
+- Because map() is part of the JavaScript Array prototype, it works the same wherever JavaScript runs.
+
+🔹 Syntax:
+array.map(function(currentValue, index, array) {
+  // return element for new array
+});
+
+🔹 Parameters:
+currentValue: The current element being processed.
+
+index (optional): The index of the current element.
+
+array (optional): The original array.
+
+🔹 Returns:
+A new array with the transformed elements. The original array is not modified.
