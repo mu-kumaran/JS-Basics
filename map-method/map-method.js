@@ -25,3 +25,40 @@ console.log(names,ages)
 const filename = ["file1.txt","file2.txt"]
 const paths = filename.map(value => "./filepath/"+value)
 console.log(paths)
+
+// mapping objects
+
+const person = {
+    name: "John",
+    age : 30
+}
+
+Object.entries(person).map(([key,value]) => {
+    console.log(key,':',value)
+})
+
+Object.keys(person).map((keys) => {
+    console.log(keys)
+})
+
+Object.values(person).map((values) => {
+    console.log(values)
+})
+
+Object.values(person).map((values,index) => {
+    console.log(values,index)
+})
+
+/*
+What Object.entries(obj) returns:
+[
+  ['name', 'John'],
+  ['age', 30]
+]
+
+What Object.keys(obj) returns:
+[name, age]
+
+What Object.values(obj) returns:
+[John, 30]
+ */
