@@ -70,7 +70,6 @@ Copies all properties from product (like id, name, price)
 Then adds a new property qty to the object
 
 Result: { id, name, price, qty }
-
 */
 
 /*
