@@ -1,4 +1,15 @@
-// Shopping Cart
+/*
+Shopping Cart System
+Features:
+
+Add products to cart
+
+Remove product from cart
+
+Calculate total
+
+Display formatted output
+*/
 
 let cart = []
 
@@ -49,3 +60,31 @@ show_cart()
 
 remove_from_cart(102)
 show_cart()
+
+/*
+{ ...product, qty }
+This is spread syntax:
+
+Copies all properties from product (like id, name, price)
+
+Then adds a new property qty to the object
+
+Result: { id, name, price, qty }
+
+*/
+
+/*
+✅ Summary of Syntax/Concepts Used
+Concept	Syntax Used	Purpose
+Array	[]	To store product & cart lists
+Object	{}	Product details
+Function	function name() {}	Reusable actions
+find()	array.find()	Find first match in array
+findIndex()	array.findIndex()	Get position/index
+push()	array.push()	Add to cart
+splice()	array.splice(index, 1)	Remove item
+reduce()	array.reduce((sum, item) => ...)	Sum total price
+forEach()	array.forEach(item => {})	Loop and display items
+Template strings	`Hello ${name}`	Dynamic text formatting
+Spread syntax	{ ...object, extraProperty }	Clone object and add new fields
+*/
