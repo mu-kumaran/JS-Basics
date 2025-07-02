@@ -5,3 +5,4 @@ fetch("https://dog.ceo/api/breeds/image/random")
 
 // URLS
 // https://dog.ceo/api/breeds/image/random
+// https://jsonplaceholder.typicode.com/users
