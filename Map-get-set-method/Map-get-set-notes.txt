@@ -1,0 +1,39 @@
+💡 What is Map() in JavaScript?
+A Map is a built-in JavaScript object that stores key–value pairs, similar to an object ({}), but with better features.
+
+const store = new Map();
+You can use it to set, get, and delete data, like a mini in-memory database — which is exactly what we did for OTP storage.
+
+🔧 Syntax Breakdown (with Examples)
+Let’s say we want to store OTPs per email:
+
+const emailOTPStore = new Map();
+🧾 .set(key, value)
+Stores a value for a given key.
+
+emailOTPStore.set("user@example.com", "123456");
+👉 This stores:
+
+{
+  "user@example.com" => "123456"
+}
+✅ Can be any type (string, object, etc.)
+
+🔍 .get(key)
+Retrieves the value for the key.
+
+const otp = emailOTPStore.get("user@example.com");
+console.log(otp); // 👉 "123456"
+
+❌ .delete(key)
+Removes the key-value pair from the Map.
+
+emailOTPStore.delete("user@example.com");
+Now get() for this email will return undefined.
+
+🔁 .has(key)
+Checks whether a key exists.
+
+if (emailOTPStore.has("user@example.com")) {
+  console.log("OTP exists");
+}
