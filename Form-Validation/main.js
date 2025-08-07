@@ -27,3 +27,21 @@ for(let i=0; i<todos.length; i++){
 for(let itr of todos){
     console.log(itr.id)
 }
+
+todos.forEach((todo) => {
+    console.log(todo.task)
+})
+
+const todo_task = todos.map((todo) => {
+    return todo.task
+})
+
+console.log(todo_task)
+
+const todo_completed_task = todos.filter((todo) => {
+    return todo.isCompleted == true;
+}).map((todo) => {
+    return todo.task
+})
+
+console.log(todo_completed_task)
