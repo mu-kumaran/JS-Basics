@@ -1,47 +1,25 @@
-const todos = [
-    {
-        id:1,
-        task:'take out trash',
-        isCompleted: true
-    },
-    {
-        id:2,
-        task:'Meeting with boss',
-        isCompleted: true
-    },
-    {
-        id:3,
-        task:'Doctor appointment',
-        isCompleted: false
+const myForm = document.querySelector("#my-form")
+const nameInput = document.querySelector("#name")
+const emailInput = document.querySelector("#email")
+const msg = document.querySelector("#msg")
+const userList = document.querySelector("#Users")
+
+myForm.addEventListener('submit',onSubmit)
+
+function onSubmit(e){
+    e.preventDefault()
+    document.querySelector('body').style.backgroundColor = 'blue';
+    console.log(nameInput.value)
+    if(nameInput.value === '' || emailInput.value === ''){
+        msg.innerHTML = "Please enter the fields"
+        msg.classList.add("error")
+        setTimeout(() => msg.remove(), 3000)
     }
-]
+    else{
+        const li = document.createElement('li')
+        li.innerHTML = `User: ${nameInput.value},<br>email: ${emailInput.value}`
+        userList.appendChild(li)
+        userList.style.color = 'white';
+    }
 
-console.log(todos)
-console.log(todos[1]['task'])
-console.log(JSON.stringify(todos))
-
-for(let i=0; i<todos.length; i++){
-    console.log(todos[i].task)
 }
-
-for(let itr of todos){
-    console.log(itr.id)
-}
-
-todos.forEach((todo) => {
-    console.log(todo.task)
-})
-
-const todo_task = todos.map((todo) => {
-    return todo.task
-})
-
-console.log(todo_task)
-
-const todo_completed_task = todos.filter((todo) => {
-    return todo.isCompleted == true;
-}).map((todo) => {
-    return todo.task
-})
-
-console.log(todo_completed_task)

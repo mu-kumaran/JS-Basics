@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form validation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Form validation !!!!</h1>
+    <header>
+        <h1>Basic Form Validation !!!!</h1>
+    </header>
+    
+    <section class="container">
+        <form id="my-form">
+            <h2>Add Users</h2>
+            <div>
+                <label for="name"> Name: </label> <br> 
+                <input type="text" placeholder="Enter your name" id="name">
+            </div>
+            <div>
+                <label for="email">Email: </label> <br> 
+                <input type="email" placeholder="Enter your email" id="email">
+            </div>
+            <button class="btn">Submit</button>
+            <div id="msg"></div>
+        </form>
+
+        <ul id="Users"></ul>
+    </section>
+    
     <script src="main.js"></script>
 </body>
 </html>
